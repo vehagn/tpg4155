@@ -18,7 +18,7 @@ n   = 50;   % Maximum number of iterations
 eps = 2e-4; % Error tolerance
 
 %% Main loop
-while (i < n) && (sqrt(sum((B-W).^2)) > eps)
+while (i < n) && (sum(sqrt((B-W).^2)) > eps)
     i = i + 1; % Manually increment i
     % Run Nelder-Mead algorithm
     [B,G,W,FB,FG,FW] = nelderMeadAlg(B,G,W,FB,FG,FW,F);
