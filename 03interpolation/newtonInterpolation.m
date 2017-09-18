@@ -1,4 +1,5 @@
 clear;
+
 f = @(x) cos(x);
 xk = [0, 1, 2, 3, 4]; % Where to evaluate our function f
 
@@ -45,7 +46,7 @@ for m = 1:length(xk)
 end
 
 function fi = getCoeffs(xk,f)
-% Calculate the Newton Polynomial divided differen cecoefficients. 
+% Calculate the Newton Polynomial divided differences cecoefficients. 
 % We want the diagonal of the output here.
     n = length(xk);
     fi = zeros(n,n);
