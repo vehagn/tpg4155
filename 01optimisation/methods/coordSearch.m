@@ -1,6 +1,5 @@
 function x = coordSearch(F,x0,n,eps,pSearch)
-%POWELL Summary of this function goes here
-%   Detailed explanation goes here
+%Coordinate search for finding the minimum of a function
 if (nargin < 5); pSearch =  0.5; end
 if (nargin < 4); eps     = 1e-7; end
 if (nargin < 3); n       =  100; end

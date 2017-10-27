@@ -1,6 +1,5 @@
 function [x] = steepDesc(F,x0,n,eps,dx,xSearch)
-%STEEPDESC Summary of this function goes here
-%   Detailed explanation goes here
+% Searches for the minimum of a function using the steepest descent method.
 if (nargin < 6); xSearch =  0.5; end
 if (nargin < 5); dx      = 1e-7; end
 if (nargin < 4); eps     = 1e-7; end

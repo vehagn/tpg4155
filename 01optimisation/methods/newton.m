@@ -1,6 +1,5 @@
 function [ x ] = newton(F,x0,n,eps,dx,xSearch)
-%NEWTON Summary of this function goes here
-%   Detailed explanation goes here
+%Newton's method for finding the minimum of a function.
 if (nargin < 6); xSearch =  0.5; end
 if (nargin < 5); dx      = 1e-7; end
 if (nargin < 4); eps     = 1e-7; end

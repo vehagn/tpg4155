@@ -1,6 +1,6 @@
 function [ df ] = firstDerivative(F,x,dx,type)
-%DERIVATE Summary of this function goes here
-%   Detailed explanation goes here
+%Calculates the first dericate using either the midpoint difference,
+%forward difference, or backward difference.
 if (nargin < 4); type = 'mid'; end
 if (nargin < 3); dx   =  1e-8; end
 

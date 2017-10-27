@@ -1,4 +1,4 @@
-%% Solve the Laplace equaiton using the Conjugate Gradient method.
+%% Solve the Laplace equation using the Conjugate Gradient method.
 
 %% Initialisation
 clear;

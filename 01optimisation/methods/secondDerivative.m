@@ -1,6 +1,5 @@
 function [ ddf ] = secondDerivative(F,x,dx,dy,type)
-%SECONDDERIVATIVE Summary of this function goes here
-%   Detailed explanation goes here
+%Calculates the second derivative of a function using the midpoint method.
 if (nargin < 5); type = 'mid'; end
 if (nargin < 4); dy   =  1e-8; end
 if (nargin < 3); dx   =    dy; end

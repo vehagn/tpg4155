@@ -1,9 +1,14 @@
 function [x,p,U] = powell(F,x0,n,eps,pSearch,xSearch)
-%Naive Powell method for finding the minimum of a function
+%POWELL Searches for the minimum a
 if (nargin < 6); xSearch =     0.5; end
 if (nargin < 5); pSearch = xSearch; end
 if (nargin < 4); eps     =    1e-7; end
 if (nargin < 3); n       =     100; end
+
+% dim = 2;
+% n = 100;
+% pSearch = 1.0;
+% xSearch = .1;
 
 dim = length(x0);
 

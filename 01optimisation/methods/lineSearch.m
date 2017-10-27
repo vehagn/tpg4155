@@ -1,5 +1,5 @@
 function a = lineSearch(f,a,b,n,eps,type)
-%LINESEARCH
+%LINESEARCH to find the minimum along a line.
 if (nargin < 6); type =    0; end
 if (nargin < 5); eps  = 1e-8; end
 if (nargin < 4); n    = 1000; end
