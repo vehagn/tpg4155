@@ -20,7 +20,7 @@ xlabel('x'); ylabel('y');
 plot(x, f(x),'LineWidth',4);
 plot(x,E(x),'-.','LineWidth',2);
 plot(x,C(x),'--','LineWidth',2);
-legend('exp(x)','Equidistant','Chebyshev','Location','NorthWest');
+legend('1/(1+25xˆ2)','Equidistant','Chebyshev','Location','NorthWest');
 xlim([min(x) max(x)]);
 
 figure(2); clf; hold on; grid on;

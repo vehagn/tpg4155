@@ -7,7 +7,6 @@ y = @(t) (t+1).*(t+1) - 0.5*exp(t); % Analytical solution
 t = linspace(0,2);                  % Dense t-grid to plot y(x) smoother
 a = 0.5;                            % Starting value
 
-
 f = @(t,y) y - t.^2 +1;
 % f = @(t,y) t.*exp(3.*t)-2.*y;
 n = 10;
