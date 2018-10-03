@@ -2,6 +2,7 @@
 
 %% Initialisation
 clear;
+
 n = 5; % nodes on x-axis
 m = 5; % nodes on y-axis
 eps = 1e-16;     % Error threshold

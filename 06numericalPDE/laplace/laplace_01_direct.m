@@ -2,6 +2,7 @@
 
 %% Initialisation 
 clear;
+
 n = 3; % inner nodes on x-axis
 m = 3; % inner nodes on y-axis
 
@@ -15,10 +16,10 @@ d = ones(N,1); d(n:n:(N-m)) = 0;
 A = spdiags([e d -2*e],[-3,-1,0],N,N);
 A = A + A';
 
-B   = -diag(-1/4*e)*(A-diag(-4*e));
-rho = max(abs(eig(B)));
-w = 2/(1+sqrt(1-rho^2));
+% Convert from sparse to full matrix
+Afull = full(A);
 
+% From boundary conditions
 b = [-25, -50,-150, 0, 0, -50, 0, 0, -25]';
 
 %% Direct solve
@@ -27,8 +28,8 @@ p = A\b;
 % In order to plot the result we have to reshape our solution vector
 pSol = reshape(p,n,m)';
 % We want to also plot the boundary conditions
-x = linspace(0,0.5,5);
-y = linspace(0,0.5,5);
+x = linspace(0,0.5,n+2);
+y = linspace(0,0.5,m+2);
 U = zeros(n+2,m+2);
 U(2:4,2:4) = pSol;        % inner part
 U(1,:)     = 200*x;       % top part
