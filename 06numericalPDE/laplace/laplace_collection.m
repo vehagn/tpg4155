@@ -69,6 +69,7 @@ checkConvergence(A)
 % [pIter,it] = jacobi(A,b,pIter,nIter,eps);
 % [pIter,it] = gaussSeidel(A,b,pIter,nIter,eps);
 [pIter,it] = cg(A,b,pIter,nIter,eps);
+
 Uiter(2:m-1,2:n-1) = reshape(pIter,n-2,m-2)';
 % [Uiter,it] = SOR(Uiter,w,nIter,eps);
 

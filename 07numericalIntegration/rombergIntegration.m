@@ -29,7 +29,7 @@ function R = romberg(f,n,a,b)
     % Calculate the higher orders using recurssion.
     for j = 2:n
         for k = j:n
-            R(k,j) = ((4^j)*R(k,j-1)-R(k-1,j-1))/((4^j)-1);
+            R(k,j) = R(k,j-1) + (R(k,j-1)-R(k-1,j-1))/((4^j)-1);
         end
     end       
 end

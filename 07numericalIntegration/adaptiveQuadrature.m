@@ -33,8 +33,8 @@ function [I, err, n] = adaptive(f,fa,fc,fb,a,b,h,TOL,I,n,N)
     % Full interval:      [a--d--c--e--b]
     % Left sub interval:  [a--d--c]
     % Right sub interval:       [c--e--b]
-    Ileft  = h*(fa+4*fd+fc)/3; % Simpson's rule left sub interval
-    Iright = h*(fc+4*fe+fb)/3; % Simpson's rule right sub interval
+    Ileft  = simpson(fa,fd,fc,h); % Simpson's rule left sub-interval
+    Iright = simpson(fc,fe,fb,h); % Simpson's rule right sub-interval
     err = abs(Ileft+Iright-I); % Error estimate from theory
     if n > N
         % In order to avoid infinite recursion we set a deepest level the
@@ -51,7 +51,7 @@ function [I, err, n] = adaptive(f,fa,fc,fb,a,b,h,TOL,I,n,N)
         % interval using a recursive relation.
         [Ileft , Lerr, Li] = adaptive(f,fa,fd,fc,a,c,h,TOL/2,Ileft ,n,N);
         [Iright, Rerr, Ri] = adaptive(f,fc,fe,fb,c,b,h,TOL/2,Iright,n,N);
-        I   = Ileft + Iright;   % Summing the left and right integral
+        I   = Ileft + Iright;   % Addming left and right integral
         err = max(Lerr,Rerr);   % Pessimistic error estimate
         n   = max(Li,Ri);       % Pick the deepest level
     end
